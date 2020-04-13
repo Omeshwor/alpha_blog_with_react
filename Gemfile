@@ -37,6 +37,9 @@ gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 #Use webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '~> 5.0', '>= 5.0.1'
 
+#Render components in views or controller actions. Server-side rendering powered by ExecJS. Transform JSX in the asset pipeline or use Webpacker.
+gem 'react-rails', '~> 2.6', '>= 2.6.1'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

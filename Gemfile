@@ -34,6 +34,9 @@ gem 'bootstrap-will_paginate', '~> 1.0'
 
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 
+#Use webpack to manage app-like JavaScript modules in Rails
+gem 'webpacker', '~> 5.0', '>= 5.0.1'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

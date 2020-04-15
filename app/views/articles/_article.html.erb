@@ -2,18 +2,13 @@
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
         <div class="well well-lg">
-            <%= react_component("Article", { title: article.title,
-                                                 path: article_path(article),
-                                                 description: truncate(article.description, length: 100)}) %>
-            <div class="article-body">
-                <div class="article-meta-details">
-                    <small>
-                        Created by: <%= article.user.username if article.user %>,
-                        <%= time_ago_in_words(article.created_at) %> ago,
-                        last updated: <%= time_ago_in_words(article.updated_at) %> ago
-                    </small>
-                </div>
-            </div>
+            <%= react_component('Article', { description:  truncate(article.description, escape: false, length: 100),
+                                            path:         article_path(article),
+                                            title:        article.title,
+                                            author:       article.user,
+                                            created_at:   time_ago_in_words(article.created_at),
+                                            updated_at:   time_ago_in_words(article.updated_at) }) %>
+            
             <% if article.categories.any? %>
                 <p>Categories: <%= render article.categories %></p>
             <% end %>

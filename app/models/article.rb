@@ -5,4 +5,10 @@ class Article < ApplicationRecord
     validates :title, presence: true, length: {minimum: 3, maximum: 50}
     validates :description, presence: true, length: {minimum: 10, maximum: 255}
     validates :user_id, presence: true
+
+    # def author
+    #    user.username
+    # end
+    
+
 end

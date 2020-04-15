@@ -1,5 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
+import Timestamp from 'react-timestamp';
+
 class Article extends React.Component {
 	render () {
 		return (
@@ -10,9 +12,9 @@ class Article extends React.Component {
  				<div className='article-body'>
    					{this.props.description}
    					<div className="article-meta-details">
-       					<small>Created by: <em>{this.props.author.username}</em>,
-              				{this.props.created_at} ago , 
-              				last updated: {this.props.updated_at} ago
+       					<small>Created by: <em>{this.props.username.username}</em>, &nbsp;
+              				<Timestamp relative date={this.props.created_at} precision={3} relativeTo={Date} /> ago, &nbsp;
+              				last updated: <Timestamp relative date={this.props.updated_at} precision={3} relativeTo={Date}/> ago
        					</small>
    					</div>
  				</div>
@@ -25,8 +27,8 @@ Article.propTypes = {
 	title: PropTypes.string,
 	path:  PropTypes.string,
 	description: PropTypes.string,
-	author: PropTypes.string,
+	username: PropTypes.object,
 	created_at: PropTypes.string,
 	updated_at: PropTypes.string
-  };
+  	};
 export default Article

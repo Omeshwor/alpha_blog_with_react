@@ -13,13 +13,18 @@ class Article extends React.Component {
    					{this.props.description}
    					<div className="article-meta-details">
        					<small>Created by: <em>{this.props.username.username}</em>, &nbsp;
-              				<Timestamp relative date={this.props.created_at} precision={3} relativeTo={Date} /> ago, &nbsp;
-              				last updated: <Timestamp relative date={this.props.updated_at} precision={3} relativeTo={Date}/> ago
+              				<Timestamp relative date={this.props.created_at} autoUpdate />, &nbsp;
+              				last updated: <Timestamp relative date={this.props.updated_at} autoUpdate />
        					</small>
    					</div>
  				</div>
 			</React.Fragment>
 		);
+	}
+
+	componentDidMount() {
+		var self = this;
+		this._timer = setInterval(function() { self.forceUpdate() }, 1000);
 	}
 }
 
